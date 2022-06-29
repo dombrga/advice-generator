@@ -48,27 +48,12 @@ function changeWindowSize() {
 }
 
 async function getAdvice() {
-  console.log('asdsad')
   isLoading.value = true
   const data = await (await fetch(url)).json()
   adviceNumber.value = data.slip.id
   adviceText.value = data.slip.advice
   isLoading.value = false
 }
-
-// load advice data
-// async function loadAdvice() {
-//   const data = await (await fetch(url)).json()
-//   adviceNumber.value = data.slip.id
-//   adviceText.value = data.slip.advice
-//   isLoading.value = !isLoading.value
-// } 
-
-// watch(windowWidth, () => {
-//   console.log('windowwss')
-//   divider.value = 
-// })
-// watchEffect(() => changeWindowSize)
 
 onMounted(async () => {
   changeWindowSize()
